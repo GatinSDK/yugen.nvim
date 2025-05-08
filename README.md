@@ -30,7 +30,7 @@ Add the following line to your lazy configuration:
   config = function()
     require("yugen").setup({
     transparent = false, -- true
-    statusline_transparent = false, -- true
+    transparent_statusline = false, -- true
       })
 
       vim.cmd.colorscheme('yugen')
