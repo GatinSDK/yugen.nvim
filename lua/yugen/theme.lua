@@ -8,10 +8,10 @@ function M.get(config)
   local styles = {
     italic = (config.disable_italics and p.none) or 'italic',
     vert_split = (config.bold_vert_split and groups.border) or p.none,
-    background = (config.disable_background and p.none) or groups.background,
-    float_background = (config.disable_float_background and p.none) or groups.panel,
+    background = (config.transparent and p.none) or groups.background,
+    float_background = (config.transparent_statusline and p.none) or groups.panel,
   }
-  styles.nc_background = (config.dim_nc_background and not config.disable_background and groups.panel)
+  styles.nc_background = (config.dim_nc_background and not config.transparent and groups.panel)
       or styles.background
 
   theme = {
@@ -43,9 +43,9 @@ function M.get(config)
     ModeMsg = { fg = p.color200 },
     MoreMsg = { fg = p.color200 },
     NonText = { fg = p.color500 },
-    Normal = { fg = p.color200, bg = p.color800 },
-    NormalFloat = { fg = p.color200, bg = p.color800 },
-    NormalNC = { fg = p.color200, bg = p.color800 },
+    Normal = { fg = p.color200, bg = styles.background },
+    NormalFloat = { fg = p.color200, bg = styles.float_background },
+    NormalNC = { fg = p.color200, bg = styles.nc_background },
     NvimInternalError = { fg = p.error, bg = p.color700 },
     Pmenu = { fg = p.color200, bg = p.color700 },
     PmenuSbar = { bg = p.colo700 },
@@ -61,9 +61,9 @@ function M.get(config)
     SpellCap = { sp = p.blue1, style = 'undercurl' },
     SpellLocal = { sp = p.warning, style = 'undercurl' },
     SpellRare = { sp = p.blue1, style = 'undercurl' },
-    SignColumn = { fg = p.color200, bg = p.color800 },
-    StatusLine = { fg = p.color200, bg = p.color800 },
-    StatusLineNC = { fg = p.color200, bg = p.color800 },
+    SignColumn = { fg = p.color200, bg = p.none },
+    StatusLine = { fg = p.color200, bg = styles.float_background },
+    StatusLineNC = { fg = p.color200, bg = styles.background },
     StatusLineTerm = { link = 'StatusLine' },
     StatusLineTermNC = { link = 'StatusLineNC' },
     TabLine = { fg = p.color200  },
