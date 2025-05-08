@@ -44,7 +44,7 @@ function M.get(config)
     MoreMsg = { fg = p.color200 },
     NonText = { fg = p.color500 },
     Normal = { fg = p.color200, bg = styles.background },
-    NormalFloat = { fg = p.color200, bg = styles.float_background },
+    NormalFloat = { fg = p.color200, bg = p.none },
     NormalNC = { fg = p.color200, bg = styles.nc_background },
     NvimInternalError = { fg = p.error, bg = p.color700 },
     Pmenu = { fg = p.color200, bg = p.color700 },
