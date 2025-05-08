@@ -1,4 +1,4 @@
-# yugen 🌌
+# yugen 🌌 with transparency
 
 **yugen** is a Neovim theme inspired by the profound beauty and depth of the concept of "yūgen." It provides a minimalist and aesthetically pleasing color scheme for coding, highlighting both subtle and profound elements in your workspace.
 
@@ -26,9 +26,14 @@ Add the following line to your lazy configuration:
 
 ```lua
 {
-    'bettervim/yugen.nvim',
-    config = function()
-        vim.cmd.colorscheme('yugen')
+  'GatinSDK/yugen.nvim',
+  config = function()
+    require("yugen").setup({
+    transparent = false, -- true
+    statusline_transparent = false, -- true
+      })
+
+      vim.cmd.colorscheme('yugen')
     end,
 }
 ```
