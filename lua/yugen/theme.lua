@@ -39,7 +39,7 @@ function M.get(config)
     Folded = { fg = p.color200, bg = groups.panel },
     IncSearch = { fg = p.color200, bg = p.color600 },
     LineNr = { fg = p.color500 },
-    MatchParen = { fg = p.color200, bg = p.color700 },
+    MatchParen = { fg = p.color200, bg = p.color700, style = "underline" },
     ModeMsg = { fg = p.color200 },
     MoreMsg = { fg = p.color200 },
     NonText = { fg = p.color500 },
@@ -207,8 +207,8 @@ function M.get(config)
     luaTSConstructor = { fg = p.color200 },
 
     -- vim.lsp.buf.document_highlight()
-    LspReferenceText = { bg = p.color800 },
-    LspReferenceRead = { bg = p.color800 },
+    LspReferenceText = { bg = p.none, style = "underline" },
+    LspReferenceRead = { bg = p.none, style = "underline" },
     LspReferenceWrite = { bg = p.color8000 },
 
     -- lsp-highlight-codelens
@@ -383,6 +383,9 @@ function M.get(config)
     -- Float term
     TerminalBorder = { link = 'SagaBorder' },
     TerminalNormal = { link = 'SagaNormal' },
+    -- TS Context
+		TreesitterContextBottom = { style = "underline" },
+		TreesitterContextLineNumber = { fg = p.color300 },
   }
 
   vim.g.terminal_color_0 = p.color800
